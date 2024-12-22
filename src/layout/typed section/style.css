@@ -1,0 +1,24 @@
+.typed-section {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 60px 0;
+}
+.typed-section H4 {
+    font-size: 34px;
+    line-height: 50px;
+    letter-spacing: -1.28px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 0;
+    text-align: LEFT;
+    margin-bottom: 0;
+}
+.typed-section a.btn.btn-style1 {
+    margin-top: 0;
+}
+.typed-section H4 span.mt_typed_text {
+    color: #6164ff;
+}
+.typed-section span.typed-cursor {
+    color: #6164ff;
+    font-weight: 400;
+}

@@ -1,0 +1,52 @@
+.fun-facts-section {
+    padding: 90px 0;
+    background: #16151a;
+    position: relative;
+    border-bottom: 1px solid #222227;
+}
+h3.fun-facts-heading1 {
+    font-size: 42px;
+    line-height: 51px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.fun-facts-section p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #bdbdbd;
+    margin-bottom: 10px;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto 10px;
+}
+.row.fun-facts-timer {
+    margin-top: 40px;
+}
+span.timer {
+    font-size: 51px;
+    line-height: 55px;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: #6164ff;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+    min-height: 55px;
+}
+.row.fun-facts-timer h4 {
+color: #fff;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0;
+    font-size: 16px;
+}
+.radial {
+    border: 1px solid #222227;
+    padding: 30px;
+    border-radius: 12px;
+}

@@ -1,0 +1,171 @@
+.contant-section-page {
+    padding: 90px 0;
+    border-bottom: 1px solid #222227;
+    border-top: 1px solid #222227;
+}
+
+
+.contant-section-page .contact-element-wrapper {
+    box-shadow: 0 25px 70px rgb(0 0 0 / 7%);
+    -webkit-box-shadow: 0 25px 70px rgb(0 0 0 / 7%);
+    background: #222227;
+    padding: 40px;
+    border-radius: 12px;
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    border: 1px solid #222227;
+
+}
+.contant-section-page .contact-element-wrapper:hover {
+    background: #6164ff;
+    box-shadow: 0 10px 25px 10px rgb(0 0 0 / 10%);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+
+
+.contant-section-page .contact-element {
+    display: flex;
+}
+
+.contant-section-page .icon {
+    display: inline-flex;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 23px;
+    display: inline-flex;
+    margin-right: 20px;
+    color: #bdbdbd;
+}
+
+.contant-section-page .content h3 {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: #bdbdbd;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.content p {
+    margin: 0;
+}
+.content p a {
+    margin: 0;
+    font-size: 15px;
+    line-height: 28px;
+    color: #bdbdbd;
+    display: block;
+}
+
+
+.contant-section-page .contact-element-wrapper h3,
+.contant-section-page .contact-element-wrapper .icon,
+.contant-section-page .contact-element-wrapper p,
+.contant-section-page .contact-element-wrapper a {
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+.contant-section-page .contact-element-wrapper:hover h3,
+.contant-section-page .contact-element-wrapper:hover .icon,
+.contant-section-page .contact-element-wrapper:hover a {
+    color: #fff;
+}
+.iframe-contact form {
+    border: 1px solid #222227;
+    padding: 20px;
+    border-radius: 12px;
+}
+.iframe-contact .form-control {
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 1;
+    color: #fff;
+    background-color: #222227;
+    background-clip: padding-box;
+    border: 1px solid #222227;
+    border-radius: 12px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    height: 50px;
+}
+
+.iframe-contact input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #bdbdbd;
+}
+.iframe-contact input::-moz-placeholder { /* Firefox 19+ */
+    color: #bdbdbd;
+}
+.iframe-contact input:-ms-input-placeholder { /* IE 10+ */
+    color: #bdbdbd;
+}
+.iframe-contact input:-moz-placeholder { /* Firefox 18- */
+    color: #bdbdbd;
+}
+
+.iframe-contact textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #bdbdbd;
+}
+.iframe-contact textarea::-moz-placeholder { /* Firefox 19+ */
+    color: #bdbdbd;
+}
+.iframe-contact textarea:-ms-input-placeholder { /* IE 10+ */
+    color: #bdbdbd;
+}
+.iframe-contact textarea:-moz-placeholder { /* Firefox 18- */
+    color: #bdbdbd;
+}
+.iframe-contact textarea {
+    padding: 20px !important;
+    min-height: 120px;
+}
+
+.iframe-contact iframe {
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+         filter: grayscale(100%);
+        border-radius: 12px;
+}
+
+.iframe-contact {
+    padding: 90px 0;
+    background: #16151a;
+    border-bottom: 1px solid #222227;
+}
+.iframe-contact h3 {
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.iframe-contact .form-group {
+    margin-bottom: 25px !important;
+}
+.iframe-contact span.text-danger {
+    display: block;
+    margin-top: 10px;
+}
+.page-content {
+    padding: 90px 0 70px;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.page-content p {
+    font-size: 16px;
+    line-height: 28px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+.page-content li {
+    font-size: 16px;
+    line-height: 28px;
+    color: #bdbdbd;
+}
+.page-content a {
+    color: #6164ff;
+}
