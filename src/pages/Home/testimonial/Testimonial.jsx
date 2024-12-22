@@ -2,32 +2,34 @@ import Slider from "react-slick"; // مكتبة السلايدر
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Testimonial.css"; // ملف التنسيقات
+import { useTranslation } from "react-i18next";
 
 function Testimonial() {
+  const { t } = useTranslation();
   const testimonials = [
     {
-      title: "الفوز معًا",
-      text: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+      title: t("Testimonials-Subtitle1"),
+      text: t("Testimonials-Card1"),
       name: "John Mike",
-      role: "مبرمج",
+      role: t("Testimonials-Text"),
     },
     {
-      title: "وكالة عالية الجودة",
-      text: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+      title: t("Testimonials-Subtitle2"),
+      text: t("Testimonials-Card2"),
       name: "Michael Doe",
-      role: "مبرمج",
+      role: t("Testimonials-Text"),
     },
     {
-      title: "فريق فني",
-      text: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+      title: t("Testimonials-Subtitle3"),
+      text: t("Testimonials-Card3"),
       name: "Felix Doe",
-      role: "برامج النتيجة",
+      role: t("Testimonials-Text"),
     },
     {
-      title: "رائع بكل تأكيد",
-      text: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
+      title: t("Testimonials-Subtitle4"),
+      text: t("Testimonials-Card4"),
       name: "Lucian Ionut",
-      role: "مبرمج",
+      role: t("Testimonials-Text"),
     },
   ];
 
@@ -51,7 +53,7 @@ function Testimonial() {
         <Slider {...settings} className="testimonial-section-slider">
           {testimonials.map((testimonial, index) => (
             <blockquote className="testimonial-slide" key={index}>
-              <div className="section_title">رأي العملاء</div>
+              <div className="section_title">{t("Testimonials-Title")}</div>
               <span className="testimonial_slider_title">{testimonial.title}</span>
               <div className="testimonial-area">
                 <div className="testimonial-layoutArea">

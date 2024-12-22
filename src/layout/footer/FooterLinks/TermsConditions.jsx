@@ -1,8 +1,10 @@
 import "./global.css"; // ملف التنسيقات
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 
 function TermsConditions() {
+  const { t } = useTranslation();
   const terms = [
     "تتعارض مع صورة برمجة تك العامة أو النية الحسنة أو السمعة.",
     "الترويج لأي نشاط أو محتوى غير قانوني، بما في ذلك على سبيل المثال لا الحصر إساءة معاملة الأطفال أو الحيوانات والعنف والاستخدام غير المشروع للمخدرات والشرب دون السن القانونية.",
@@ -27,7 +29,7 @@ function TermsConditions() {
   return (
     <>
     <Helmet>
-      <title>شروط الاستخدام</title>
+      <title>{t('Terms')}</title>
     </Helmet>
     <div className="terms-section">
       <div className="breadcrumb-area">

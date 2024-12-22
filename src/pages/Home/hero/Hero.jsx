@@ -46,7 +46,7 @@ function CustomTypewriter({ strings }) {
     }
   }, [index, charIndex, isSymbol, strings]);
 
-  return <span>{displayText}</span>;
+  return <span>{displayText}|</span>;
 }
 
 function Hero() {

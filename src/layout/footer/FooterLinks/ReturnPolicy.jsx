@@ -1,11 +1,15 @@
 import "./global.css"; // تأكد من إنشاء ملف CSS لتنسيق هذا القسم.
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 function ReturnPolicy() {
+  const { t } = useTranslation();
   return (
     <>
       <Helmet>
-        <title>سياسة الإرجاع</title>
+        <title>
+          {t('Return')}
+        </title>
       </Helmet>
 
       <div className="return-policy">

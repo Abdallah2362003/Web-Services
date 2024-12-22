@@ -14,25 +14,25 @@ function PortfolioPage() {
   const projects = [
     {
       title: t('P-Card-Title1'),
-      category: t('P-Card-Inf1'),
+      category: "تطبيقات الهاتف",
       img: p1,
       link: "",
     },
     {
       title: t('P-Card-Title2'),
-      category: t('P-Card-Inf2'),
+      category: "تطبيقات الهاتف",
       img: p2,
       link: "",
     },
     {
       title: t('P-Card-Title3'),
-      category: t('P-Card-Inf3'),
+      category: "برمجة",
       img: p3,
       link: "",
     },
     {
       title: t('P-Card-Title4'),
-      category: t('P-Card-Inf4'),
+      category: "برمجة",
       img: p4,
       link: "",
     },

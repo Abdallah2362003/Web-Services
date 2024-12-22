@@ -1,11 +1,16 @@
 import "./global.css"; // تأكد من إنشاء ملف CSS لتنسيق هذا القسم.
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
+
 
 function PrivacyPolicy() {
+  const { t } = useTranslation();
   return (
     <>
       <Helmet>
-        <title>سياسة الخصوصية</title>
+        <title>
+          {t('Privacy')}
+        </title>
       </Helmet>
 
       <div className="privacy-policy">

@@ -1,8 +1,10 @@
 import { FaFacebookF, FaInstagram, FaBehance } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Link من react-router-dom
 import "./Footer.css";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="footer-section">
       <div className="footer-wrapper">
@@ -10,10 +12,10 @@ function Footer() {
           <div className="col-lg-6">
             <div className="footer-left">
               <div className="inner">
-                <span>على استعداد للقيام بذلك</span>
-                <h4>هيا بنا إلى العمل</h4>
+                <span>{t('Footer-Title')}</span>
+                <h4>{t('Footer-Subtitle')}</h4>
                 <Link className="btn btn-style2" to="/contact">
-                  <span>اتصل بنا</span>
+                  <span>{t('Btn-Contact-Hero')}</span>
                 </Link>
               </div>
             </div>
@@ -24,20 +26,20 @@ function Footer() {
                 {/* روابط سريعة */}
                 <div className="col-lg-6 col-sm-6 col-12">
                   <div className="footer-widget">
-                    <h4 className="title">روابط سريعة</h4>
+                    <h4 className="title">{t('Quick-Links')}</h4>
                     <span className="venor-animate-border"></span>
                     <ul className="menu">
                       <li className="menu-item-footer">
-                        <Link to="/terms">الأحكام والشروط</Link>
+                        <Link to="/terms">{t('Terms-Link')}</Link>
                       </li>
                       <li className="menu-item-footer">
-                        <Link to="/privacy-policy">سياسة الخصوصية</Link>
+                        <Link to="/privacy-policy">{t('Privacy-Link')}</Link>
                       </li>
                       <li className="menu-item-footer">
-                        <Link to="/return-refund-policy">سياسة الإرجاع</Link>
+                        <Link to="/return-refund-policy">{t('Return-Link')}</Link>
                       </li>
                       <li className="menu-item-footer">
-                        <Link to="/contact">اتصل بنا</Link>
+                        <Link to="/contact">{t('Contact-Info')}</Link>
                       </li>
                     </ul>
                   </div>
@@ -45,7 +47,7 @@ function Footer() {
                 {/* تواصل معنا */}
                 <div className="col-lg-6 col-sm-6 col-12">
                   <div className="footer-widget">
-                    <h4 className="title">تواصل معنا</h4>
+                    <h4 className="title">{t('Footer-Contact-links')}</h4>
                     <span className="venor-animate-border"></span>
                     <ul className="ft-link">
                       <li>
@@ -97,7 +99,7 @@ function Footer() {
                 {/* حقوق الطبع والنشر */}
                 <div className="col-lg-12">
                   <div className="copyright-text text-center">
-                    <p>جميع الحقوق محفوظة &copy; برمجة.تك.&nbsp;</p>
+                    <p>{t('CopyRight')}</p>
                     <p>
                       <img
                         src="https://f.nooncdn.com/s/app/com/noon/images/visa-color.svg"

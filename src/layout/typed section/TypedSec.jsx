@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./style.css"
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // مكون الكتابة المخصص
 function CustomTypewriter({ strings }) {
@@ -46,28 +47,34 @@ function CustomTypewriter({ strings }) {
 }
 
 function TypedSec() {
+  const { t } = useTranslation();
   return (
     <div className="typed-section">
       <div className="container">
         <div className="row">
           <div className="col-md-8">
             <h4 className="parent-typed-text">
-              <span className="mt_typed-beforetext">هل تبحث عن </span>
+              <span className="mt_typed-beforetext">
+                {t("Switch-Word-Title")} {""}
+              </span>
               <span className="mt_typed_text">
                 <CustomTypewriter
                   strings={[
-                    " تصميم المواقع؟",
-                    " تصميم وطباعة؟|",
-                    " تصميم رقمي؟|",
-                    " وسائل التواصل الاجتماعي؟|",
+                    t("Switch-Word-Subtitle1"),
+                    t("Switch-Word-Subtitle2"),
+                    t("Switch-Word-Subtitle3"),
+                    t("Switch-Word-Subtitle4"),
                   ]}
                 />
+                |
               </span>
             </h4>
           </div>
           <div className="col-md-4 text-right">
             <Link to="/contact" target="_self" className="btn btn-style1">
-              <span>اتصال</span>
+              <span>
+                {t("Btn-Contact-Hero")} 
+              </span>
             </Link>
           </div>
         </div>
