@@ -1,0 +1,117 @@
+.pricing-elements {
+    padding: 70px 0 90px;
+    border-top: 1px solid #222227;
+    border-bottom: 1px solid #222227;
+}
+.venor-price-box a.btn.btn-style1 {
+    margin-right: 0;
+}
+.pricing-elements::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: -50px;
+    left: calc(50% - 2.5px);
+    width: 5px;
+    height: 100px;
+    background: #6164ff;
+}
+.pricing-elements h2 {
+    font-size: 42px;
+    line-height: 51px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+.pricing-elements h2 span {
+        color: #6164ff;
+}
+.pricing-elements p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #bdbdbd;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto 50px;
+}
+
+.venor-price-box {
+    padding: 20px 20px 45px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    -webkit-box-shadow: 0 7px 8px 0 rgb(0 0 0 / 6%);
+    box-shadow: 0 7px 8px 0 rgb(0 0 0 / 6%);
+    border: 1px solid #222227;
+}
+.venor-price-box h3 {
+    padding: 20px 10px;
+}
+
+.venor-price-box h3 strong {
+    display: block;
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.venor-price-box h3 span {
+    font-size: 16px;
+    color: #bdbdbd;
+    line-height: 26px;
+    display: block;
+}
+
+.plan-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-features ul li {
+    padding: 15px;
+    border-bottom: 1px solid #222227;
+    font-size: 16px;
+    color: #fff;
+}
+
+.plan-features ul li:last-child {
+    border: 0;
+}
+
+
+.plan-ribbon {
+    background: #895bef;
+    box-shadow: none;
+    text-shadow: none;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+    position: absolute;
+    top: 17px;
+    left: auto;
+    right: -55px;
+    width: 55%;
+    transform: rotate(
+36deg
+ );
+    padding: 7px 0;
+    font-size: 13px;
+}
+.venor-price-box.premium-pricing {
+    background: #222227;
+}
+
+.venor-price-box:not(.premium-pricing) {
+    margin-top: 30px;
+}
+.venor-price-box.premium-pricing li {
+    color: #fff;
+}
