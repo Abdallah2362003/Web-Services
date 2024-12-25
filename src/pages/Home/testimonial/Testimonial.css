@@ -2,6 +2,7 @@
     background: #16151a;
     position: relative;
     border-bottom: 1px solid #222227;
+    cursor: grab;
 }
 
 .testimonial-slide {

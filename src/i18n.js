@@ -77,7 +77,7 @@ const resources = {
       "Footer-Subtitle" : "Let's get to work",
       "Quick-Links" : "Quick Links",
       "Footer-Contact-links" : "Say Hello",
-      "Terms-Link" : "Terms",
+      "Terms-Link" : "Terms and conditions",
       "Privacy-Link" : "Policy & Privacy",
       "Return-Link" : "Return Policy",
       "Contact-Info" : "Contact us",

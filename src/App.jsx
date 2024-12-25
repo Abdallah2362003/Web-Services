@@ -15,10 +15,12 @@ import Portfolio from "./pages/portfolio/Portfolio";
 import Pricing from "./pages/pricing/Pricing";
 import Contact from "./pages/Contact/Contact";
 import { HelmetProvider } from "react-helmet-async";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 function App() {
   return (
     <HelmetProvider>
     <Router>
+      <ScrollToTop/>
       <Header />
       <Routes>
         {/* الصفحة الرئيسية */}
