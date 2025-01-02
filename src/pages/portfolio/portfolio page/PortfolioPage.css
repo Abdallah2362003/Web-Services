@@ -47,7 +47,7 @@
 }
 .portfolio-section-filters .filter.active span {
     color: #fff;
-    background-color: #6164ff;
+    background-color: #5BDFE4;
 }
 .portfolio-section-filters .filter span {
     display: inline-flex;
@@ -72,7 +72,7 @@
     margin-bottom: 5px;
 }
 .portfolio-section-filters h4.entry-details-title a:hover {
-    color: #6164ff;
+    color: #5BDFE4;
 }
 .portfolio-section-filters h5.project-category {
     margin: 0;

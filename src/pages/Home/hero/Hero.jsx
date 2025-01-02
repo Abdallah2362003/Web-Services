@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Slider.css";
-import heroImg from "../../../assets/images/1622051838banner-1.png";
+import heroImg from "../../../assets/A3.gif";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ function CustomTypewriter({ strings }) {
   const [index, setIndex] = useState(0); // مؤشر النصوص
   const [charIndex, setCharIndex] = useState(0); // مؤشر الحروف
   const [isSymbol, setIsSymbol] = useState(false); // حالة كتابة الرموز
-  const symbols = ["*", "%", "$", "#", "@", "{", "}", "[", "]", "&", "!","?"]; // الرموز العشوائية
+  const symbols = ["*", "%", "$", "#", "@", "{", "}", "[", "]", "&", "!", "?"]; // الرموز العشوائية
   useEffect(() => {
     if (index < strings.length) {
       const currentString = strings[index];
@@ -24,8 +24,8 @@ function CustomTypewriter({ strings }) {
             setIsSymbol(false);
           } else {
             // كتابة الحرف الصحيح واستبدال الرمز
-            setDisplayText((prev) =>
-              prev.slice(0, -1) + currentString[charIndex]
+            setDisplayText(
+              (prev) => prev.slice(0, -1) + currentString[charIndex]
             );
             setCharIndex((prevCharIndex) => prevCharIndex + 1);
             setIsSymbol(true);
@@ -59,9 +59,7 @@ function Hero() {
           <div className="row align-items-center">
             <div className="col-md-5">
               <div className="slider-content">
-                <h1>
-                  {t("Hero-Title")}
-                </h1>
+                <h1>{t("Hero-Title")}</h1>
                 <h2>
                   <CustomTypewriter
                     strings={[
@@ -73,17 +71,13 @@ function Hero() {
                   />
                 </h2>
                 <div className="slider-body">
-                  <p>
-                    {t("Hero-P")}
-                  </p>
+                  <p>{t("Hero-P")}</p>
                 </div>
                 <a href="#" className="btn btn-slider">
-                  <span>{t('Btn-Contact-Hero')}</span>
+                  <span>{t("Btn-Contact-Hero")}</span>
                 </a>
                 <Link to="/portfolio" className="btn btn-slider2">
-                  <span>
-                    {t("Hero-Portfolio-Btn")}
-                  </span>
+                  <span>{t("Hero-Portfolio-Btn")}</span>
                 </Link>
               </div>
             </div>

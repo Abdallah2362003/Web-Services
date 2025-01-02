@@ -10,6 +10,9 @@ body{
 a{
     text-decoration: none;
 }
+h3{
+    color: #5BDFE4 !important;
+}
 
 .rtl img.flag-lang {
     margin-left: 3px;

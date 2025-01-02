@@ -176,7 +176,8 @@
   content: "";
   z-index: 1;
   opacity: 0.5;
-  border-top-right-radius: 6px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
 }
 .footer-section .footer-right {
   background-image: url(../../assets/img/pattern-2.jpg);
@@ -311,7 +312,7 @@ a.btn.btn-style2 {
   font-size: 14px;
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  background-color: #6164ff;
+  background-color: #5BDFE4;
   border-radius: 12px;
   padding: 0 35px;
   display: inline-block;

@@ -51,7 +51,7 @@ function Services() {
   ];
 
   const settings = {
-    dots: false, // إظهار النقاط السفلية
+    dots: true, // إظهار النقاط السفلية
     infinite: true, // التكرار اللانهائي للسلايدر
     speed: 500, // سرعة الانتقال
     slidesToShow: 3, // عدد العناصر المعروضة
@@ -72,6 +72,7 @@ function Services() {
         },
       },
     ],
+    arrows:false,
   };
 
   return (
@@ -83,7 +84,7 @@ function Services() {
             {t('Slider-Subtitle')}
           </p>
         </div>
-        <Slider {...settings}>
+        <Slider style={{Cursor : 'grab'}} {...settings}>
           {services.map((service, index) => (
             <div className="card-parent" key={index}>
               <div className="card featured to-top-left">

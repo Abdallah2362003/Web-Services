@@ -63,7 +63,7 @@
     display: block;
     height: 70px;
     width: 70px;
-    background: rgb(97 100 255 / 40%);
+    background: rgba(2, 247, 255, 0.342);
     z-index: -1;
     -webkit-border-radius: 50%;
     border-radius: 50%;

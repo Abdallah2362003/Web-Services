@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { FaSearch, FaTimes } from "react-icons/fa";
-import logo from "../../assets/images/logo.png";
 import arabicFlag from "../../assets/images/1618065739arabic.svg";
 import englishFlag from "../../assets/images/1618066305united-kingdom.svg";
 import "./Header.css";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import techyLogo from "../../assets/1.png";
 
 function Header() {
   // اللغة الافتراضية هي العربية
@@ -29,22 +29,23 @@ function Header() {
     }
   }, [i18n.language]);
 
-    // تحديث الرابط الخاص بالخطوط
-    const updateFont = (language) => {
-      const fontLink = document.getElementById("font-link"); // تحديث الرابط للخطوط
-      const body = document.body; // الوصول إلى عنصر <body>
-    
-      if (fontLink) {
-        if (language === "ar") {
-          fontLink.href = "https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap";
-          body.style.fontFamily = "'Cairo', sans-serif"; // تغيير الـ font-family للعربية
-        } else {
-          fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap";
-          body.style.fontFamily = "'Inter', sans-serif"; // تغيير الـ font-family للإنجليزية
-        }
+  // تحديث الرابط الخاص بالخطوط
+  const updateFont = (language) => {
+    const fontLink = document.getElementById("font-link"); // تحديث الرابط للخطوط
+    const body = document.body; // الوصول إلى عنصر <body>
+
+    if (fontLink) {
+      if (language === "ar") {
+        fontLink.href =
+          "https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap";
+        body.style.fontFamily = "'Cairo', sans-serif"; // تغيير الـ font-family للعربية
+      } else {
+        fontLink.href =
+          "https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap";
+        body.style.fontFamily = "'Inter', sans-serif"; // تغيير الـ font-family للإنجليزية
       }
-    };
-    
+    }
+  };
 
   // تبديل القائمة
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -75,9 +76,9 @@ function Header() {
 
   return (
     <header
-      className={`header ${isScrolled ? "common-front sticky" : "common-front"} ${
-        document.body.classList.contains("rtl") ? "rtl" : ""
-      }`}
+      className={`header ${
+        isScrolled ? "common-front sticky" : "common-front"
+      } ${document.body.classList.contains("rtl") ? "rtl" : ""}`}
     >
       <div
         className={`header__content__venor ${
@@ -91,7 +92,7 @@ function Header() {
               width="105"
               height="22"
               className="img-fluid logo-front"
-              src={logo}
+              src={techyLogo}
               alt="logo"
             />
           </Link>
@@ -128,7 +129,7 @@ function Header() {
           <ul className="header__nav">
             <li className="header__nav-item">
               <Link className="header__nav-link" to="/">
-              {t("Home")}
+                {t("Home")}
               </Link>
             </li>
             <li className="header__nav-item">
@@ -195,33 +196,14 @@ function Header() {
               <span>{language}</span>
             </a>
             {languageMenuOpen && (
-              <ul
-                className="dropdown-menu header__lang-dropdown show"
-                style={{
-                  position: "absolute",
-                  transform: "translate3d(0px, 36px, 0px)",
-                  top: "5px",
-                  left: "-15px",
-                  willChange: "transform",
-                  backgroundColor: "rgb(22, 21, 26)",
-                  minWidth: "135%",
-                  border: "1px solid #222227",
-                  borderRadius: "20px",
-                  padding: "20px",
-                }}
-              >
+              <ul className="dropdown-menu header__lang-dropdown show">
                 <li>
                   <a
                     title="English"
                     href="#"
                     onClick={() => selectLanguage("English")}
                   >
-                    <img
-                      width="16"
-                      height="16"
-                      src={englishFlag}
-                      alt="flag"
-                    />
+                    <img width="16" height="16" src={englishFlag} alt="flag" />
                     <span>English</span>
                   </a>
                 </li>
@@ -231,12 +213,7 @@ function Header() {
                     href="#"
                     onClick={() => selectLanguage("عربى")}
                   >
-                    <img
-                      width="16"
-                      height="16"
-                      src={arabicFlag}
-                      alt="flag"
-                    />
+                    <img width="16" height="16" src={arabicFlag} alt="flag" />
                     <span>عربى</span>
                   </a>
                 </li>
@@ -250,9 +227,7 @@ function Header() {
               className="header__action-btn header__action-btn--start-project"
               to="/contact"
             >
-              <span>
-                {t("Btn-Contact-Head")}
-              </span>
+              <span>{t("Btn-Contact-Head")}</span>
             </Link>
           </div>
         </div>
