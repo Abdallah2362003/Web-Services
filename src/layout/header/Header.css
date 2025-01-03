@@ -1220,9 +1220,10 @@ div#project_list.active {
     margin: 0 auto; /* وضع الشعار في المنتصف */
   }
 
-  .header__actions__venor{
-    display: none; /* إخفاء باقي العناصر إذا لم تكن مطلوبة */
-  }
+  .header__actions__venor .header__action--signin {
+      display: none;
+    }
+  
   .header__menu__venor{
     display: block;
   }

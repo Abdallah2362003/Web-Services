@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-import { FaSearch, FaTimes } from "react-icons/fa";
-import arabicFlag from "../../assets/images/1618065739arabic.svg";
-import englishFlag from "../../assets/images/1618066305united-kingdom.svg";
+import { FaSearch } from "react-icons/fa";
 import "./Header.css";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import techyLogo from "../../assets/1.png";
+import ContactButton from "./ContactButton";
+import LanguageSwitcher from "./LanguageSwitcher";
+import Logo from "./Logo";
+import NavMenu from "./NavMenu";
+import SearchBar from "./SearchBar";
 
 function Header() {
-  // اللغة الافتراضية هي العربية
   const [language, setLanguage] = useState("عربى");
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
@@ -16,229 +16,85 @@ function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t, i18n } = useTranslation();
 
-  // تعيين اللغة الافتراضية عند تحميل المكون
   useEffect(() => {
     const currentLang = i18n.language;
     document.documentElement.lang = currentLang;
-    if (currentLang === "ar") {
-      document.body.setAttribute("dir", "rtl");
-      document.body.classList.add("rtl");
-    } else {
-      document.body.removeAttribute("dir");
-      document.body.classList.remove("rtl");
-    }
+    document.body.setAttribute("dir", currentLang === "ar" ? "rtl" : "ltr");
+    document.body.classList.toggle("rtl", currentLang === "ar");
   }, [i18n.language]);
 
-  // تحديث الرابط الخاص بالخطوط
   const updateFont = (language) => {
-    const fontLink = document.getElementById("font-link"); // تحديث الرابط للخطوط
-    const body = document.body; // الوصول إلى عنصر <body>
+    const fontLink = document.getElementById("font-link");
+    const fontHref =
+      language === "ar"
+        ? "https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+        : "https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap";
 
-    if (fontLink) {
-      if (language === "ar") {
-        fontLink.href =
-          "https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap";
-        body.style.fontFamily = "'Cairo', sans-serif"; // تغيير الـ font-family للعربية
-      } else {
-        fontLink.href =
-          "https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap";
-        body.style.fontFamily = "'Inter', sans-serif"; // تغيير الـ font-family للإنجليزية
-      }
-    }
+    if (fontLink) fontLink.href = fontHref;
+    document.body.style.fontFamily =
+      language === "ar" ? "'Cairo', sans-serif" : "'Inter', sans-serif";
   };
 
-  // تبديل القائمة
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  const toggleState = (setter) => setter((prev) => !prev);
 
-  // تبديل البحث
-  const toggleSearch = () => setSearchActive((prev) => !prev);
-
-  // تبديل قائمة اللغة
-  const toggleLanguage = () => setLanguageMenuOpen((prev) => !prev);
-
-  // اختيار اللغة
   const selectLanguage = (selectedLang) => {
     setLanguage(selectedLang);
     setLanguageMenuOpen(false);
-    i18n.changeLanguage(selectedLang === "عربى" ? "ar" : "en");
+    const langCode = selectedLang === "عربى" ? "ar" : "en";
+    i18n.changeLanguage(langCode);
     updateFont(selectedLang);
   };
 
-  // تتبع التمرير
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`header ${
-        isScrolled ? "common-front sticky" : "common-front"
-      } ${document.body.classList.contains("rtl") ? "rtl" : ""}`}
+      className={`header ${isScrolled ? "common-front sticky" : "common-front"} ${
+        document.body.classList.contains("rtl") ? "rtl" : ""
+      }`}
     >
       <div
         className={`header__content__venor ${
           isScrolled ? "animated fadeInDown" : ""
         }`}
       >
-        {/* الشعار */}
-        <div className="header__logo">
-          <Link to="/" title="برمجة تك">
-            <img
-              width="105"
-              height="22"
-              className="img-fluid logo-front"
-              src={techyLogo}
-              alt="logo"
-            />
-          </Link>
-        </div>
+        <Logo />
 
-        {/* عنصر البحث */}
-        <form
-          className={`header__search__venor ${
-            searchActive ? "header__search--active" : ""
-          }`}
-          method="GET"
-        >
-          <input
-            id="search"
-            type="text"
-            name="term"
-            placeholder={t("Search-Placeholder")}
-            autoComplete="off"
-          />
-          <button type="submit">
+        <div className="header__search-icon header__action header__action--search">
+          <button
+            className="header__action-btn"
+            type="button"
+            onClick={() => toggleState(setSearchActive)}
+          >
             <FaSearch />
           </button>
-          <button type="button" className="close" onClick={toggleSearch}>
-            <FaTimes />
-          </button>
-        </form>
-
-        {/* قائمة التنقل */}
-        <div
-          className={`header__menu__venor ${
-            menuOpen ? "header__menu__venor--active" : ""
-          }`}
-        >
-          <ul className="header__nav">
-            <li className="header__nav-item">
-              <Link className="header__nav-link" to="/">
-                {t("Home")}
-              </Link>
-            </li>
-            <li className="header__nav-item">
-              <Link className="header__nav-link" to="/about-us">
-                {t("About")}
-              </Link>
-            </li>
-            <li className="header__nav-item">
-              <Link className="header__nav-link" to="/portfolio">
-                {t("Portfolio")}
-              </Link>
-            </li>
-            <li className="header__nav-item">
-              <Link className="header__nav-link" to="/pricing">
-                {t("Pricing")}
-              </Link>
-            </li>
-            <li className="header__nav-item">
-              <Link className="header__nav-link" to="/contact">
-                {t("Contact")}
-              </Link>
-            </li>
-          </ul>
         </div>
 
-        {/* الإجراءات */}
+        <SearchBar
+          searchActive={searchActive}
+          toggleSearch={() => toggleState(setSearchActive)}
+          t={t}
+        />
+
+        <NavMenu menuOpen={menuOpen} t={t} />
+
         <div className="header__actions__venor">
-          {/* زر البحث */}
-          <div className="header__action header__action--search">
-            <button
-              className="header__action-btn"
-              type="button"
-              onClick={toggleSearch}
-            >
-              <FaSearch />
-            </button>
-          </div>
-
-          {/* قائمة اللغة */}
-          <div
-            className={`header__lang ${languageMenuOpen ? "show" : ""}`}
-            style={{
-              position: "relative",
-            }}
-          >
-            <a
-              className="header__lang-btn"
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                toggleLanguage();
-              }}
-              role="button"
-              id="dropdownLang"
-              aria-haspopup="true"
-              aria-expanded={languageMenuOpen ? "true" : "false"}
-            >
-              <img
-                width="16"
-                height="16"
-                src={language === "عربى" ? arabicFlag : englishFlag}
-                alt="flag"
-              />
-              <span>{language}</span>
-            </a>
-            {languageMenuOpen && (
-              <ul className="dropdown-menu header__lang-dropdown show">
-                <li>
-                  <a
-                    title="English"
-                    href="#"
-                    onClick={() => selectLanguage("English")}
-                  >
-                    <img width="16" height="16" src={englishFlag} alt="flag" />
-                    <span>English</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    title="عربى"
-                    href="#"
-                    onClick={() => selectLanguage("عربى")}
-                  >
-                    <img width="16" height="16" src={arabicFlag} alt="flag" />
-                    <span>عربى</span>
-                  </a>
-                </li>
-              </ul>
-            )}
-          </div>
-
-          {/* زر التواصل */}
-          <div className="header__action header__action--signin">
-            <Link
-              className="header__action-btn header__action-btn--start-project"
-              to="/contact"
-            >
-              <span>{t("Btn-Contact-Head")}</span>
-            </Link>
-          </div>
+          <LanguageSwitcher
+            language={language}
+            languageMenuOpen={languageMenuOpen}
+            toggleLanguage={() => toggleState(setLanguageMenuOpen)}
+            selectLanguage={selectLanguage}
+          />
+          <ContactButton t={t} />
         </div>
 
-        {/* زر القائمة */}
         <button
-          className={`header__btn__venor ${
-            menuOpen ? "header__btn--active" : ""
-          }`}
-          type="button"
-          onClick={toggleMenu}
+          className={`header__btn__venor ${menuOpen ? "header__btn--active" : ""}`}
+          onClick={() => toggleState(setMenuOpen)}
         >
           <span></span>
           <span></span>
